@@ -103,6 +103,7 @@ app.get('/', (req, res) => {
   throw new Error('Error test successful.') // Express will catch this on its own.
 })
 
+
 app.get('/app/', (req, res) => {
 	// Respond with status 200
 	console.log('fxn');
@@ -131,6 +132,14 @@ app.get('/app/log/access', (req, res) => {
 	res.status(200).json(stmt);
 });
 
+
+app.post('/app/flips/:number'), (req, res, next) => {
+	var allFlips = coinFlips(req.body.number);
+	const count = countFlips(allFlips);
+	res.status(200).json({"raw":allFlips, "summary":count});
+})
+
+/*
 app.get('/app/flips/:number', (req, res) => {
 	var allFlips = coinFlips(req.params.number);
 	var count = countFlips(allFlips);
@@ -144,7 +153,7 @@ app.get('/app/flips/:number', (req, res) => {
 	res.writeHead( res.statusCode, { 'Content-Type' : 'text/plain' });
 	res.end(res.statusMessage);
 });
-
+*/
 app.get('/app/flip/call/:userCall', (req, res) => {
         var guess = flipACoin(req.params.userCall);
         console.log(guess);
