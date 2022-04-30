@@ -42,6 +42,8 @@ const server = app.listen(HTTP_PORT, () => {
 	console.log('App listening on port %PORT%'.replace('%PORT%', HTTP_PORT))
 });
 
+
+/*
 //const Database = require('./src/database.js');
 const Database = require('better-sqlite3');
 const db = new Database('user.db');
@@ -71,7 +73,9 @@ app.use( (req, res, next) => {
        db.exec(sqlInit);
         // Echo information about what we just did to the console.
        console.log('Your database has been initialized with a new table and two entries containing a username and password.');
-    } 
+    } */
+
+app.use( (req, res, next) => {
     let logdata = {
         remoteaddr: req.ip,
         remoteuser: req.user,
