@@ -42,8 +42,8 @@ const server = app.listen(HTTP_PORT, () => {
 	console.log('App listening on port %PORT%'.replace('%PORT%', HTTP_PORT))
 });
 
-const Database = require('./src/database.js');
-//const Database = require('better-sqlite3');
+//const Database = require('./src/database.js');
+const Database = require('better-sqlite3');
 const db = new Database('user.db');
 
 
@@ -133,11 +133,11 @@ app.get('/app/log/access', (req, res) => {
 });
 
 
-app.post('/app/flips/:number'), (req, res, next) => {
+app.post('/app/flips/:number', (req, res, next) => {
 	var allFlips = coinFlips(req.body.number);
 	const count = countFlips(allFlips);
 	res.status(200).json({"raw":allFlips, "summary":count});
-})
+});
 
 /*
 app.get('/app/flips/:number', (req, res) => {
