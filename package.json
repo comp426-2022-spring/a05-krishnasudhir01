@@ -1,5 +1,5 @@
 {
-  "name": "a05",
+  "name": "a05-krishnasudhir01",
   "version": "0.5.0",
   "description": "Coinserver API that also serves a single page HTML/CSS/JS browser-based interface.",
   "main": "index.js",
@@ -29,6 +29,7 @@
   "homepage": "https://github.com/comp426-2022-spring/a05-johnmar3#readme",
   "dependencies": {
     "better-sqlite3": "^7.5.1",
+    "cors": "^2.8.5",
     "express": "^4.17.3",
     "minimist": "^1.2.6",
     "morgan": "^1.10.0",
